@@ -1,0 +1,234 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ======= LOGO ========== */
+.section-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section-container h1 {
+  font-size: 3.1rem;
+  font-weight: bold;
+}
+
+#dday {
+  color:#fff; 
+  font-size: 2.8rem; 
+  font-weight: bold
+}
+
+.background-section-one{
+  background-image: url(../assets/images.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card-container{
+  background: transparent;
+  border-radius: 0.5rem;
+  padding: 1.5rem 5rem;
+  max-width: 28rem;
+}
+
+/* ======= FORM ========== */
+.card-container p {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+form{
+  display: grid;
+}
+
+.background-section-two{
+  background-image: url(../assets/images.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+input{
+  width: 28rem;
+  height: 2rem;
+  margin-bottom: .6rem;
+  text-align: center;
+  border-radius: .5rem;
+  background: #333;
+  color: #fff;
+}
+
+/* ======= FOOTER ========== */
+footer{
+  height: 6rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.background-footer {
+  background-image: url(../assets/images.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+footer p {
+  padding: .6rem;
+}
+
+footer a img {
+  width: 2rem;
+  height: 2rem;
+  margin: .6rem;
+}
+
+@media ( max-width: 1024px) {
+  .section-container {
+    width: 73%;
+  }
+
+  .section-container h1 {
+    font-size: 2.5rem;
+  }
+
+  #dday {
+    font-size: 2.6rem;
+  }
+
+  .section-container a img {
+    width: 700px;
+    height: 500px;
+  }
+
+  .background-footer  {
+    width: 69%;
+    padding: 1.3rem;
+  }
+
+
+}
+
+@media ( max-width: 768px) {
+  .section-container {
+    width: 73%;
+  }
+
+  .section-container h1 {
+    font-size: 2rem;
+  }
+
+  .section-container a img {
+    width: 500px;
+    height: 300px;
+  }
+
+  #dday {
+    font-size: 1.8rem;
+  }
+
+  input {
+    width: 25rem;
+  }
+
+  .background-footer {
+    width: 69%;
+    padding: 1rem;
+  }
+}
+
+@media ( max-width: 425px) { 
+  .section-container a img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .section-container h1 {
+    font-size: 1rem;
+  }
+
+  .section-container p {
+    font-size: 1rem;
+  }
+
+  #dday {
+    font-size: 1rem;
+  }
+
+  input {
+    width: 15rem;
+    height: 1.5rem;
+  }
+
+  .background-footer {
+    width: 66%;
+    padding: 0.9rem;
+  }
+
+  .background-footer p {
+    font-size: 1rem;
+  }
+
+}
+
+@media ( max-width: 425px) {
+  .section-container a img {
+    width: 250px;
+    height: 180px;
+  }
+
+  #dday {
+    font-size: .9rem;
+  }
+
+  input {
+    width: 12rem;
+    height: 1.4rem;
+  }
+
+  footer a img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: .6rem;
+  }
+
+  .background-footer {
+    width: 66.3%;
+    height: 5rem;
+    padding: 0.8rem;
+  }
+}
+
+@media ( max-width: 320px) {
+  .section-container a img {
+    width: 220px;
+    height: 150px;
+  }
+
+  #dday {
+    font-size: .8rem;
+  }
+
+  .background-footer {
+    width: 65%;
+    height: 5rem;
+    padding: 0.8rem;
+  }
+}
+
