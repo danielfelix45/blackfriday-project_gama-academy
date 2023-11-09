@@ -1,49 +1,41 @@
-const form = document.getElementById('form')
-const countDownDate = new Date("October 06, 2021 12:00:00").getTime();
+const form = document.getElementById('form');
+const countDownDate = new Date("October 06, 2024 12:00:00").getTime();
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  let nome = document.getElementById('nome').value;
-  let email = document.getElementById('email').value;
-  let data = {
-    nome,
-    email,
-  }
-  let convertData = JSON.stringify(data);
 
-  localStorage.setItem('lead', convertData)
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
 
-  let content = document.getElementById('content')
+  const data = { nome, email };
+  const convertData = JSON.stringify(data);
 
-  let carregando = `<p>carregando...</p>`
+  // Armazenar os dados no localStorage
+  localStorage.setItem('lead', convertData);
 
-  let pronto = `<p>pronto!</p>`
+  const content = document.getElementById('content');
+  content.innerHTML = "<p>Carregando...</p>";
 
-  content.innerHTML = carregando
-
-
+  // Aguardar 1 segundo e depois exibir "pronto!"
   setTimeout(() => {
-    content.innerHTML = pronto
-  }, 1000)
-
-})
+    content.innerHTML = "<p>Pronto!</p>";
+  }, 1000);
+});
 
 let x = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = countDownDate - now;
 
-  let now = new Date().getTime();
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  let distance = countDownDate - now;
-
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("dday").innerHTML = days + "Dias " + hours + "Horas "
-  + minutes + "Minutos " + seconds + "Segundos ";
+  const countdownElement = document.getElementById("dday");
+  countdownElement.innerHTML = `${days} Dias ${hours} Horas ${minutes} Minutos ${seconds} Segundos`;
 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("dday").innerHTML = "Próxima promoção: ";
+    countdownElement.innerHTML = "Próxima promoção: ";
   }
 }, 1000);
